@@ -1,4 +1,79 @@
+------------------------------------ARQUIVO HTML-------------------------------------
 
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/STYLE.CSS">
+    <title> Bula Digital - Eurí </title>
+</head>
+<body>
+    <div class="background-verde">
+        <!--Começo do header-->
+        <header>
+
+            <!--container começoo-->
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                      <a href="index.html"> Bula Digital </a>  
+                    </div>
+                    <ul class="ul">
+                    <ul class="ul.ativo"></ul>
+                        <li> <a href="#"> Começo </a></li>
+                        <li> <a href="#"> Sobre </a></li>
+                        <li> <a href="#"> Fármacias próximas</a></li>
+                        <li> <a href="#"> Passo a passo para escannear</a></li>
+                        <li>  <button class="btn-gradiente">Leia aqui seu QRcode</button></li>
+
+                    </ul>
+                    <div class="menu-icon">
+                        <img src="Img/icone.png" alt="menu">
+                    
+                    </div>
+                   
+
+
+
+               
+                </nav>
+            </div>
+            <!--container final-->
+
+        </header>
+        <!--Final do header-->
+        <main>
+            <div class="container">
+                <div class="main-text">
+                    <h1> Aqui você encontra a bula 
+                        e informações 
+                        importantes sobre o seu remédio de forma
+                        rápida e prática!</h1>
+                </div>
+                <!--imagem grandona - começo -->
+                <div class="main-img">
+                    <img src="img/img.prim.webp" alt="caixa de remédio sendo escanneada"> 
+
+                </div>
+                <!--imagem grandona - final -->
+            </div>
+
+
+        </main>
+
+    </div>
+
+    <script src="JS/main.js"></script>
+    
+</body>
+</html>
+
+
+------------------------------------ARQUIVO CSS-------------------------------------
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 /* seletor, visse*/ 
@@ -208,3 +283,25 @@ main .container{
     
       
 }
+
+
+
+------------------------------------ARQUIVO JS-------------------------------------
+
+
+
+var menuIcon = document.querySelector('.menu-icon');
+var ul = document.querySelector('.ul');
+var body = document.body; 
+
+menuIcon.addEventListener('click', () => {
+   if (ul.classList.contains('ativo')) {
+        ul.classList.remove('ativo');
+        document.querySelector('.menu-icon img').src = 'img/icone.png';
+        body.classList.remove('menu-aberto'); 
+   } else {
+        ul.classList.add('ativo');
+        document.querySelector('.menu-icon img').src = 'img/close2.png';
+        body.classList.add('menu-aberto'); 
+   }
+});
